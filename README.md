@@ -21,13 +21,24 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 ## Milestone 1: Setup, Planning, Design
 
-❗️**Title**: `What is the title of your project? Be creative! Replace this block of text.`
+**Title**: `Macro-Economics Tracker`
 
-❗**Purpose**: `In a single sentence, describe WHAT your project will do. Replace this block of text.`
+**Purpose**: `One of the most important concepts in Macro-economics is GDP (Gross Domestic Products). This project is
+ intented to calculate GDP and its components (Consumption, Investment, Government Spending, and Net Exports) 
+ based on user input and displays the results graphically. We also aim to extrat real-world data from other websites to 
+ rank the GDP and show the historical data on GDP of that specific country.`
 
-❗️**Source Assignment(s)**: `List which original assignments you will base your project on? Replace this block of text.`
+**Source Assignment(s)**:
+Chapter 6: Functions (to structure the program into reusable functions)
+Chapter 10: Lists (to store and manipulate data)
+Chapter 12: Dictionaries (to store GDP components and their values)
+Chapter 15: GUI and Event Driven Programming (for the interactive user interface)
+Chapter 17-19: Classes and Objects, Inheritance (to structure the GDP calculator and components as objects)
 
-❗️**CRC Card(s)**:
+(We may need to add more chapters as we move forward.)
+
+
+**CRC Card(s)**:
   - Create a CRC card for each class that your project will implement.
   - See this link for a sample CRC card and a template to use for your own cards (you will have to make a copy to edit):
     [CRC Card Example](https://docs.google.com/document/d/1JE_3Qmytk_JGztRqkPXWACJwciPH61VCx3idIlBCVFY/edit?usp=sharing)
@@ -35,7 +46,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/crc.png "Image of CRC card as an example. Upload your CRC card(s) in place of this one. ")
+![Don't leave me in your README!](image/my_crc.png)   (This crc may change as we move forward!)
 
 ❗️**Branches**: This project will **require** effective use of git. 
 
@@ -44,8 +55,8 @@ branch) as they work. When you need to bring each others branches together, do s
 into your own, following the process we've discussed in previous assignments: 
 
 ```
-    Branch 1 name: _____________
-    Branch 2 name: _____________
+    Branch 1 name: mohammadif_final_project
+    Branch 2 name: tserings_final_project
 ```
 ---
 
