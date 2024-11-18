@@ -48,7 +48,7 @@ Chapter 17-19: Classes and Objects, Inheritance (to structure the GDP calculator
   
 ![Don't leave me in your README!](image/my_crc.png)   (This crc may change as we move forward!)
 
-❗️**Branches**: This project will **require** effective use of git. 
+**Branches**: This project will **require** effective use of git. 
 
 Each partner should create a branch at the beginning of the project, and stay on this branch (or branches of their 
 branch) as they work. When you need to bring each others branches together, do so by merging each other's branches 
