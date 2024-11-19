@@ -68,7 +68,12 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+ As of right, since we wrote the second version of the code and it works pretty well and we have the current features we
+ need, we feel confident in getting this done on time. We did not yet write the test suit so that we can see which part
+ of the code does not function ok, and it will be done by the next few days which will save us enough time to keep a decent 
+ track of our progress. The first time when I started and was brainstorming, it seemed very hard, honestly. But now when we 
+ are almost in the middle of it, it feels very good. 
+ 
 ```
 
 ---

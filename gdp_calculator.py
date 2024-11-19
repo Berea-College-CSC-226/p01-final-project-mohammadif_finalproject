@@ -67,10 +67,10 @@ class GDPApp:
         self.create_welcome_message()
 
         # Input fields
-        self.consumption_entry = self.create_input_field("Consumption (C):")
-        self.investment_entry = self.create_input_field("Investment (I):")
-        self.government_entry = self.create_input_field("Government Spending (G):")
-        self.net_exports_entry = self.create_input_field("Net Exports (NX):")
+        self.consumption_entry = self.create_input_field("Consumption (C): $")
+        self.investment_entry = self.create_input_field("Investment (I): $")
+        self.government_entry = self.create_input_field("Government Spending (G): $")
+        self.net_exports_entry = self.create_input_field("Net Exports (NX): $")
 
         # Buttons
         self.calculate_button = tk.Button(root, text="Calculate GDP", command=self.calculate_gdp, bg="#4CAF50", fg="white", width=20)
@@ -80,7 +80,7 @@ class GDPApp:
         self.reset_button.pack(pady=5)
 
         # Result label
-        self.result_label = tk.Label(root, text="Overall GDP: ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
+        self.result_label = tk.Label(root, text="Overall GDP $: ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
         self.result_label.pack(pady=10)
 
     def create_welcome_message(self):
@@ -89,12 +89,12 @@ class GDPApp:
         """
         message = (
             "Welcome to the GDP Calculator!\n\n"
-            "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country.\n\n"
+            "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country \n in a year.\n\n"
             "Components of GDP:\n"
-            "- **Consumption (C)**: Total spending by households.\n"
-            "- **Investment (I)**: Expenditure on goods used for future production.\n"
-            "- **Government Spending (G)**: Expenditure by the government on goods and services.\n"
-            "- **Net Exports (NX)**: Exports minus imports."
+            "Consumption (C): Total spending by households.\n"
+            "Investment (I): Expenditure on goods used for future production.\n"
+            "Government Spending (G): Expenditure by the government on goods and services.\n"
+            "Net Exports (NX): Exports minus imports."
         )
 
         self.welcome_frame = tk.LabelFrame(self.root, text="Welcome", font=("Helvetica", 10, "bold"), bg="#f7f7f7", width=450)
