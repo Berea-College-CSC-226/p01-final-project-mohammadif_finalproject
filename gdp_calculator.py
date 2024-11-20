@@ -5,7 +5,7 @@
 #Purpose: This program calculates the GDP using user-provided inputs for its components.
 
 ########################################################################################################################
-#Acknowledgment: Special thanks to resources and mentors for guidance on GDP and GUI programming.
+#Acknowledgment: resources and mentors for guidance on GDP and GUI programming.
 
 ########################################################################################################################
 
@@ -80,7 +80,7 @@ class GDPApp:
         self.reset_button.pack(pady=5)
 
         # Result label
-        self.result_label = tk.Label(root, text="Overall GDP $: ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
+        self.result_label = tk.Label(root, text="Overall GDP:$ ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
         self.result_label.pack(pady=10)
 
     def create_welcome_message(self):
@@ -89,7 +89,7 @@ class GDPApp:
         """
         message = (
             "Welcome to the GDP Calculator!\n\n"
-            "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country \n in a year.\n\n"
+            "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country \n within a year.\n\n"
             "Components of GDP:\n"
             "Consumption (C): Total spending by households.\n"
             "Investment (I): Expenditure on goods used for future production.\n"
@@ -149,7 +149,7 @@ class GDPApp:
             total_gdp = self.gdp_calculator.calculate_gdp()
 
             # Display the result
-            self.result_label.config(text=f"Overall GDP: {total_gdp:.2f}")
+            self.result_label.config(text=f"Overall GDP:$ {total_gdp:.2f}")
         except ValueError:
             # Handle the invalid inputs
             messagebox.showerror("Input Error", "Please enter valid numeric values for all fields.")
@@ -162,7 +162,7 @@ class GDPApp:
         self.investment_entry.delete(0, tk.END)
         self.government_entry.delete(0, tk.END)
         self.net_exports_entry.delete(0, tk.END)
-        self.result_label.config(text="Overall GDP: ")
+        self.result_label.config(text="Overall GDP:$ ")
 
 
 # This is the main code to run the application
