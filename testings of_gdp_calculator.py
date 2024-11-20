@@ -47,7 +47,7 @@ class TestGDPApp(unittest.TestCase):
         app.calculate_button.invoke()
 
         # Check the result
-        self.assertEqual(app.result_label.cget("text"), "Overall GDP $: 650.00")
+        self.assertEqual(app.result_label.cget("text"), "Overall GDP: 650.00")
 
         root.destroy()
 
