@@ -1,3 +1,16 @@
+#Name: Sonam Tsering
+#Username: Sonam867
+########################################################################################################################
+#Purpose: This program testings of_gdp_calculates is to test out the basic funcationalities of the
+# program gdp_calculator.py. Ensure that this program is functioning well.
+
+########################################################################################################################
+#Acknowledgment: resources and mentors for guidance on GDP and GUI programming.
+
+########################################################################################################################
+
+
+
 import unittest
 from gdp_calculator import GDPComponent, GDPCalculator
 
