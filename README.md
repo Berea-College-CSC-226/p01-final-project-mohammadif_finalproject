@@ -8,7 +8,7 @@
 **Author(s)**: Feda Mohammadi ,  Sonam Tsering 
 
 
-**Google Doc Link**: https://docs.google.com/document/d/1IqUFa12ckRFlhGmxh_lFLJQb1BVDFZ_NzAk2kyYhfJA/edit?usp=sharing
+**Google Doc Lin[README.md](README.md)k**: https://docs.google.com/document/d/1IqUFa12ckRFlhGmxh_lFLJQb1BVDFZ_NzAk2kyYhfJA/edit?usp=sharing
 
 ---
 
