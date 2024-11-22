@@ -1,4 +1,3 @@
-
 #Name: Feda Mohammadi
 #Username: mohammadif
 ########################################################################################################################
@@ -8,8 +7,9 @@
 #Acknowledgment: resources and mentors for guidance on GDP and GUI programming.
 
 ########################################################################################################################
+
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox  # For error handling messages
 
 # Class for individual GDP components
 class GDPComponent:
@@ -23,6 +23,7 @@ class GDPComponent:
     def get_value(self):
         return self.value
 
+
 # Class for calculating total GDP
 class GDPCalculator:
     def __init__(self):
@@ -35,6 +36,7 @@ class GDPCalculator:
         total_gdp = sum(component.get_value() for component in self.components)
         return total_gdp
 
+
 # GUI application class
 class GDPApp:
     def __init__(self, root):
@@ -42,7 +44,7 @@ class GDPApp:
         self.root.title("GDP Calculator")
         self.root.geometry("500x700")
         self.root.resizable(False, False)
-        self.root.config(bg="#f7f7f7")
+        self.root.config(bg="#f7f7f7")  # Background color
 
         # GDP components
         self.consumption = GDPComponent("Consumption")
@@ -76,15 +78,14 @@ class GDPApp:
         self.reset_button = tk.Button(root, text="Reset", command=self.reset_inputs, bg="#f44336", fg="white", width=20)
         self.reset_button.pack(pady=5)
 
-        # Ranking Button
-        self.ranking_button = tk.Button(root, text="See the Ranking", command=self.show_ranking, bg="#2196F3", fg="white", width=20)
-        self.ranking_button.pack(pady=10)
-
         # Result label
         self.result_label = tk.Label(root, text="Overall GDP:$ ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
         self.result_label.pack(pady=10)
 
     def create_welcome_message(self):
+        """
+        Display a welcome message with brief information about GDP and its components.
+        """
         message = (
             "Welcome to the GDP Calculator!\n\n"
             "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country \n within a year.\n\n"
@@ -102,6 +103,9 @@ class GDPApp:
         self.welcome_label.pack(padx=10, pady=10)
 
     def create_input_field(self, label_text):
+        """
+        Create a labeled input field with tooltip for GDP components.
+        """
         label = tk.Label(self.root, text=label_text, font=("Helvetica", 10, "bold"), bg="#f7f7f7")
         label.pack()
 
@@ -116,88 +120,67 @@ class GDPApp:
         return entry_var
 
     def show_tooltip(self, event, text):
+        """
+        Display a tooltip when hovering over input fields.
+        """
         self.tooltip = tk.Label(self.root, text=text, bg="yellow", font=("Helvetica", 8))
         self.tooltip.place(x=event.widget.winfo_x() + event.widget.winfo_width() + 10, y=event.widget.winfo_y())
 
     def hide_tooltip(self, event):
+        """
+        Hide the tooltip.
+        """
         if hasattr(self, "tooltip"):
             self.tooltip.destroy()
 
     def format_gdp_value(self, value):
+        """
+        Format the GDP value with commas and determine its scale.
+        """
         if value >= 1_000_000_000_000:
-            return f"{value / 1_000_000_000_000:,.2f} Trillion"
+            return f"{value / 1_000_000_000_000:,.2f} trillion"
         elif value >= 1_000_000_000:
-            return f"{value / 1_000_000_000:,.2f} Billion"
+            return f"{value / 1_000_000_000:,.2f} billion"
         elif value >= 1_000_000:
-            return f"{value / 1_000_000:,.2f} Million"
+            return f"{value / 1_000_000:,.2f} million"
         elif value >= 1_000:
-            return f"{value / 1_000:,.2f} Thousand"
+            return f"{value / 1_000:,.2f} thousand"
         else:
             return f"{value:,.2f}"
 
     def calculate_gdp(self):
+        """
+        Retrieve user input, update component values, calculate GDP, and display it.
+        """
         try:
+            # Get user input and update components
             self.consumption.set_value(float(self.consumption_entry.get()))
             self.investment.set_value(float(self.investment_entry.get()))
             self.government_spending.set_value(float(self.government_entry.get()))
             self.net_exports.set_value(float(self.net_exports_entry.get()))
 
+            # Calculate GDP
             total_gdp = self.gdp_calculator.calculate_gdp()
 
+            # Format GDP and display the result
             formatted_gdp = self.format_gdp_value(total_gdp)
             self.result_label.config(text=f"Overall GDP: $ {formatted_gdp}")
         except ValueError:
+            # Handle invalid inputs
             messagebox.showerror("Input Error", "Please enter valid numeric values for all fields.")
 
     def reset_inputs(self):
+        """
+        Clear all input fields and reset the result label.
+        """
         self.consumption_entry.delete(0, tk.END)
         self.investment_entry.delete(0, tk.END)
         self.government_entry.delete(0, tk.END)
         self.net_exports_entry.delete(0, tk.END)
         self.result_label.config(text="Overall GDP:$ ")
 
-    def show_ranking(self):
-        # List of top 15 countries by GDP (2024)
-        countries_gdp = {
-            "United States": 25.43,
-            "China": 14.72,
-            "Japan": 4.25,
-            "Germany": 3.85,
-            "India": 3.41,
-            "United Kingdom": 2.67,
-            "France": 2.63,
-            "Russia": 2.24,
-            "Canada": 2.16,
-            "Italy": 2.04,
-            "Brazil": 1.92,
-            "Australia": 1.69,
-            "South Korea": 1.67,
-            "Mexico": 1.46,
-            "Spain": 1.41,
-        }
 
-        # Calculate the user's GDP
-        try:
-            user_gdp = self.gdp_calculator.calculate_gdp()
-            percentile = self.get_gdp_percentile(user_gdp, countries_gdp)
-            formatted_gdp = self.format_gdp_value(user_gdp)
-
-            ranking_message = "\nTop 15 countries by GDP in 2024:\n\n"
-            for country, gdp in countries_gdp.items():
-                ranking_message += f"{country}: ${gdp:.2f} Trillion\n"
-
-            ranking_message += f"\nYour GDP is ${formatted_gdp}, and it ranks in the {percentile} percentile based on these countries."
-
-            messagebox.showinfo("GDP Ranking", ranking_message)
-        except ValueError:
-            messagebox.showerror("Input Error", "Please calculate GDP before checking the ranking.")
-
-    def get_gdp_percentile(self, user_gdp, countries_gdp):
-        sorted_gdps = sorted(countries_gdp.values(), reverse=True)
-        rank = 1 + sum(1 for gdp in sorted_gdps if user_gdp < gdp)
-        percentile = (rank / len(sorted_gdps)) * 100
-        return f"{percentile:.2f}"
-
+# This is the main code to run the application
 if __name__ == "__main__":
     root = tk.Tk()
     app = GDPApp(root)
