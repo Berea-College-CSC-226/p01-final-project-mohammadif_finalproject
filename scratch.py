@@ -1,30 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import pandas as pd
-import os
-
-# Define file paths for the Excel files in the 'data' directory
-file_path_1 = os.path.join('data', 'gdp_data_1.xlsx')
-file_path_2 = os.path.join('data', 'gdp_data_2.xlsx')
-
-# Check if the files exist before attempting to read
-if not os.path.exists(file_path_1):
-    print(f"Error: The file {file_path_1} does not exist.")
-elif not os.path.exists(file_path_2):
-    print(f"Error: The file {file_path_2} does not exist.")
-else:
-    try:
-        # Load the Excel files
-        df1 = pd.read_excel(file_path_1)
-        df2 = pd.read_excel(file_path_2)
-        print("Files loaded successfully")
-
-        # Assuming the data in the files have a 'Country' and 'GDP' column
-        # You may need to adjust this based on the actual structure of your Excel files
-        gdp_data = pd.concat([df1[['Country', 'GDP']], df2[['Country', 'GDP']]], ignore_index=True)
-        print("Data from both files loaded successfully")
-    except Exception as e:
-        print(f"Error reading the Excel files: {e}")
+import wbgapi as wb  # World Bank API library
 
 # Class for individual GDP components
 class GDPComponent:
@@ -57,7 +33,7 @@ class GDPApp:
         self.root.title("GDP Calculator")
         self.root.geometry("500x700")
         self.root.resizable(False, False)
-        self.root.config(bg="#f7f7f7")  # Background color
+        self.root.config(bg="#f7f7f7")
 
         # GDP components
         self.consumption = GDPComponent("Consumption")
@@ -75,7 +51,7 @@ class GDPApp:
         self.title_label = tk.Label(root, text="GDP Calculator", font=("Helvetica", 18, "bold"), bg="#f7f7f7")
         self.title_label.pack(pady=10)
 
-        # Welcome message displayed on the same page
+        # Welcome message
         self.create_welcome_message()
 
         # Input fields
@@ -91,20 +67,14 @@ class GDPApp:
         self.reset_button = tk.Button(root, text="Reset", command=self.reset_inputs, bg="#f44336", fg="white", width=20)
         self.reset_button.pack(pady=5)
 
-        self.rank_button = tk.Button(root, text="Fetch and Rank GDP", command=self.rank_gdp, bg="#FF9800", fg="white", width=20)
-        self.rank_button.pack(pady=5)
+        self.ranking_button = tk.Button(root, text="See the Ranking", command=self.show_ranking, bg="#2196F3", fg="white", width=20)
+        self.ranking_button.pack(pady=10)
 
         # Result label
         self.result_label = tk.Label(root, text="Overall GDP:$ ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
         self.result_label.pack(pady=10)
 
-        self.rank_label = tk.Label(root, text="Your GDP rank: ", font=("Helvetica", 12, "bold"), bg="#f7f7f7")
-        self.rank_label.pack(pady=5)
-
     def create_welcome_message(self):
-        """
-        Display a welcome message with brief information about GDP and its components.
-        """
         message = (
             "Welcome to the GDP Calculator!\n\n"
             "What is GDP?\nGross Domestic Product (GDP) measures the total economic output of a country \n within a year.\n\n"
@@ -122,89 +92,66 @@ class GDPApp:
         self.welcome_label.pack(padx=10, pady=10)
 
     def create_input_field(self, label_text):
-        """
-        Create a labeled input field with tooltip for GDP components.
-        """
         label = tk.Label(self.root, text=label_text, font=("Helvetica", 10, "bold"), bg="#f7f7f7")
         label.pack()
 
         entry_var = tk.Entry(self.root, width=30)
         entry_var.pack(pady=5)
 
-        # Tooltip for guidance
-        tooltip = f"Enter the value for {label_text.split(':')[0]}"
-        entry_var.bind("<Enter>", lambda e: self.show_tooltip(e, tooltip))
-        entry_var.bind("<Leave>", self.hide_tooltip)
-
         return entry_var
 
-    def show_tooltip(self, event, text):
-        """
-        Display a tooltip when hovering over input fields.
-        """
-        self.tooltip = tk.Label(self.root, text=text, bg="yellow", font=("Helvetica", 8))
-        self.tooltip.place(x=event.widget.winfo_x() + event.widget.winfo_width() + 10, y=event.widget.winfo_y())
-
-    def hide_tooltip(self, event):
-        """
-        Hide the tooltip.
-        """
-        if hasattr(self, "tooltip"):
-            self.tooltip.destroy()
-
     def calculate_gdp(self):
-        """
-        Retrieve user input, update component values, calculate GDP, and display it.
-        """
         try:
-            # Get user input and update components
             self.consumption.set_value(float(self.consumption_entry.get()))
             self.investment.set_value(float(self.investment_entry.get()))
             self.government_spending.set_value(float(self.government_entry.get()))
             self.net_exports.set_value(float(self.net_exports_entry.get()))
 
-            # Calculate GDP
             total_gdp = self.gdp_calculator.calculate_gdp()
 
-            # Display the result
-            self.result_label.config(text=f"Overall GDP: ${total_gdp:,.2f}")
+            formatted_gdp = self.format_gdp_value(total_gdp)
+            self.result_label.config(text=f"Overall GDP: $ {formatted_gdp}")
         except ValueError:
-            # Handle the invalid inputs
             messagebox.showerror("Input Error", "Please enter valid numeric values for all fields.")
 
     def reset_inputs(self):
-        """
-        Clear all input fields and reset the result label.
-        """
         self.consumption_entry.delete(0, tk.END)
         self.investment_entry.delete(0, tk.END)
         self.government_entry.delete(0, tk.END)
         self.net_exports_entry.delete(0, tk.END)
-        self.result_label.config(text="Overall GDP: $0")
-        self.rank_label.config(text="Your GDP rank: ")
+        self.result_label.config(text="Overall GDP:$ ")
 
-    def rank_gdp(self):
-        """
-        Rank the user's GDP against the World Bank GDP data.
-        """
+    def show_ranking(self):
         try:
-            # Get the user's calculated GDP
             user_gdp = self.gdp_calculator.calculate_gdp()
+            gdp_data = self.fetch_real_gdp_data()
 
-            # Sort the GDP data by GDP value in descending order
-            sorted_gdp_data = gdp_data.sort_values(by='GDP', ascending=False)
+            ranked_countries = sorted(gdp_data.items(), key=lambda x: x[1], reverse=True)
+            rank = 1 + sum(1 for _, gdp in ranked_countries if user_gdp < gdp)
 
-            # Find the user's rank
-            user_rank = sorted_gdp_data[sorted_gdp_data['GDP'] <= user_gdp].shape[0]
+            ranking_message = "\nTop countries by GDP:\n\n"
+            for country, gdp in ranked_countries[:15]:
+                ranking_message += f"{country}: ${gdp:,.2f}\n"
 
-            # Display the rank
-            self.rank_label.config(text=f"Your GDP rank: {user_rank} out of {len(sorted_gdp_data)} countries")
-
+            ranking_message += f"\nYour GDP is ranked #{rank} globally."
+            messagebox.showinfo("GDP Ranking", ranking_message)
         except Exception as e:
-            messagebox.showerror("Error", f"Failed to fetch GDP data: {e}")
+            messagebox.showerror("Error", f"An error occurred while fetching GDP data: {e}")
 
+    def fetch_real_gdp_data(self):
+        gdp_data = {}
+        for record in wb.data.fetch('NY.GDP.MKTP.CD', time='2022'):
+            gdp_data[wb.economy.info(record['economy'])['name']] = record['value']
+        return gdp_data
 
-# This is the main code to run the application
+    def format_gdp_value(self, value):
+        if value >= 1_000_000_000_000:
+            return f"{value / 1_000_000_000_000:,.2f} Trillion"
+        elif value >= 1_000_000_000:
+            return f"{value / 1_000_000_000:,.2f} Billion"
+        else:
+            return f"{value:,.2f}"
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = GDPApp(root)

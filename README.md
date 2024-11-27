@@ -5,7 +5,7 @@
 ❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
-**Author(s)**: Feda Mohammadi ,  Sonam Tsering 
+**Author(s)**: Feda Mohammadi , Sonam Tsering 
 
 
 **Google Doc Lin[README.md](README.md)k**: https://docs.google.com/document/d/1IqUFa12ckRFlhGmxh_lFLJQb1BVDFZ_NzAk2kyYhfJA/edit?usp=sharing
