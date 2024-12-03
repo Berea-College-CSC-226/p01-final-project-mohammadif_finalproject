@@ -82,14 +82,21 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+**Completion Percentage**: `86% - 100%`
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+    I personally feel very confident in compeleting this project on time because, over the past few weeks, we
+    have completed the biggest chunk of code that was the main chalenge to us. I made some changes and added more
+    features to it today and I believe that it will turn out well. There will be a few more changes including the 
+    testing portion in the next few days. After that, we will almost be 100% done. 
+    However, in any unforeseen cirsumstance, if we won't be able to complete this project online, the best strategy
+    in my opinion would be to get the most of done as soon as possible, right away. In that case, we won't worry about
+    the some of the biggest components that we would need to have on the application. But so far, I am confident that
+    it will be completed on time. 
 ```
 
 ---
