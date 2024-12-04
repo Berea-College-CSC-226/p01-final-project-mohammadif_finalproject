@@ -17,6 +17,17 @@ Throughout this project, you have likely used outside resources. Reference all i
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update as you go.
 
+`
+#1. Classes and Objects in Python: https://www.w3schools.com/python/python_classes.asp 
+#3. Why the Reset and Calculate buttons are not working on this code? It gives me this error!!.... 
+#4. ChatGPT prompt: What are some ways to pull real-world GDP data from the World Bank website and implement it in this code?
+#5. ChatGPT prompt: What is wbgapi and how can I use it to solve this problem?
+#6. WBGAPI https://pypi.org/project/wbgapi/
+#7. How to import data into Python? https://365datascience.com/tutorials/python-tutorials/import-data-python/
+#8. 
+`
+
+
 ---
 
 ## Milestone 1: Setup, Planning, Design
@@ -98,8 +109,6 @@ Indicate what percentage of the project you have left to complete and how confid
     the some of the biggest components that we would need to have on the application. But so far, I am confident that
     it will be completed on time. 
 ```
-
----
 
 ## Milestone 4: Final Code, Presentation, Demo
 
