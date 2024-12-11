@@ -27,7 +27,6 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 #8. 
 `
 
-
 ---
 
 ## Milestone 1: Setup, Planning, Design
@@ -113,14 +112,27 @@ Indicate what percentage of the project you have left to complete and how confid
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
+```
+    When you run the program, a window will appear with the title "GDP Calculator." Start by reading the welcome 
+    message, which explains what GDP is and its components. Below the message, you’ll see four fields where you can enter 
+    the values for GDP components: "Consumption," "Investment," "Government Spending," and "Net Exports." Fill in these 
+    fields with numbers (e.g., 1000, 2000). Once you have entered all the values, click the "Calculate GDP" button to see 
+    the total GDP displayed just below the buttons. If you want to reset all fields and start over, click the "Reset" button. 
+    After calculating the GDP, click the "See the Ranking" button to view how your GDP compares to other countries. 
+    Follow these steps to calculate and rank GDP as many times as you would like.
 
-### ❗Errors and Constraints
+```
+
+### Errors and Constraints
 Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
 deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
+```
+    The bugs has been tracked and listed on the queue.  
+```
 
 ### ❗Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
@@ -130,3 +142,36 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
 - (For partners) How well did you work with your partner? What made it go well? What made it challenging?
+
+```
+    I selected this project because I enjoy economics and economic data analysis, which is also my major. I have always 
+    been interested in understanding how different economic components, like consumption and investment, work together 
+    to calculate GDP. This project allowed me to combine my interest in economics with programming, which made it exciting 
+    and meaningful. I wanted to create something practical that could help people learn more about GDP and see how their
+    economic data fits into a global context.
+     
+    The final project is very close to what I had in mind when I first started. This program calculates GDP and ranks it
+    compared to other countries, just as I planned. However, one feature I wanted but couldn’t finish is data visualization. 
+    My goal was to let users see their GDP compared visually with global data, but we didn’t get to that part yet. 
+    Although it’s not complete, we plan to add the visualization feature after this semester to make the project even more 
+    useful and engaging. 
+    
+    I learned many things while working on this project. One of the biggest lessons was that it was much harder than I 
+    thought it would be when I started. The coding part was challenging, especially working with classes and objects. 
+    However, this also became a great learning experience as I now better understand how to use classes in a real program. 
+    The process taught me to manage my expectations and appreciate how much effort goes into building even a simple application.
+    
+    The hardest part of this project was connecting real-world data from other sources and visualizing it. We tried to 
+    fetch GDP data from external sources and clean it to use in the program, but it turned out to be very complex. 
+    While we made some progress, we couldn’t fully accomplish what we wanted in this area. Data cleaning and visualization 
+    require more time and effort, so we plan to continue working on this in the future.
+    
+    Next time, I would approach the project with a better strategy. I would break everything into smaller, more manageable 
+    tasks instead of trying to tackle big chunks at once. This way, I could focus on completing one part at a time and avoid 
+    feeling overwhelmed. I would also start earlier on features like data visualization and real-world data integration, as 
+    those are more time-consuming than I initially thought. Overall, this project taught me a lot, and I am excited to 
+    improve it in the future.
+    
+    (Sonam.......)
+
+```
