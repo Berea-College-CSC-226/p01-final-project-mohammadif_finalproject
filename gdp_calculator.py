@@ -8,9 +8,9 @@
 #Acknowledgment: resources and mentors for guidance on GDP and GUI programming.
 
 ########################################################################################################################
+
 import tkinter as tk
 from tkinter import messagebox
-
 
 # Class for individual GDP components
 class GDPComponent:
@@ -24,8 +24,7 @@ class GDPComponent:
     def get_value(self):
         return self.value
 
-
-# Class for calculating total GDP
+# Class for calculating the total GDP
 class GDPCalculator:
     def __init__(self):
         self.components = []
@@ -36,7 +35,6 @@ class GDPCalculator:
     def calculate_gdp(self):
         total_gdp = sum(component.get_value() for component in self.components)
         return total_gdp
-
 
 # Class for determining GDP ranking
 class GDPPercentileRanker:
@@ -56,7 +54,6 @@ class GDPPercentileRanker:
                 return category
         return "Unranked"
 
-
 # GUI application class
 class GDPApp:
     def __init__(self, root):
@@ -65,6 +62,9 @@ class GDPApp:
         self.root.geometry("500x700")
         self.root.resizable(False, False)
         self.root.config(bg="#f7f7f7")
+
+        # Flag to track if GDP is calculated
+        self.is_gdp_calculated = False
 
         # GDP components
         self.consumption = GDPComponent("Consumption")
@@ -160,10 +160,14 @@ class GDPApp:
             total_gdp = self.gdp_calculator.calculate_gdp()
 
             formatted_gdp = self.format_gdp_value(total_gdp)
-
             self.result_label.config(text=f"Overall GDP: $ {formatted_gdp}")
+
+            # Mark GDP as calculated
+            self.is_gdp_calculated = True
+
         except ValueError:
             messagebox.showerror("Input Error", "Please enter valid numeric values for all fields.")
+            self.is_gdp_calculated = False
 
     def reset_inputs(self):
         self.consumption_entry.delete(0, tk.END)
@@ -171,25 +175,12 @@ class GDPApp:
         self.government_entry.delete(0, tk.END)
         self.net_exports_entry.delete(0, tk.END)
         self.result_label.config(text="Overall GDP: $ ")
+        self.is_gdp_calculated = False  # Reset flag
 
     def show_ranking(self):
-        countries_gdp = {
-            "United States": 25.43,
-            "China": 14.72,
-            "Japan": 4.25,
-            "Germany": 3.85,
-            "India": 3.41,
-            "United Kingdom": 2.67,
-            "France": 2.63,
-            "Russia": 2.24,
-            "Canada": 2.16,
-            "Italy": 2.04,
-            "Brazil": 1.92,
-            "Australia": 1.69,
-            "South Korea": 1.67,
-            "Mexico": 1.46,
-            "Spain": 1.41,
-        }
+        if not self.is_gdp_calculated:
+            messagebox.showwarning("Action Required", "Please calculate GDP first before viewing the ranking.")
+            return
 
         try:
             user_gdp = self.gdp_calculator.calculate_gdp()
@@ -197,6 +188,24 @@ class GDPApp:
 
             percentile = self.rank_calculator.determine_percentile(user_gdp)
             ranking_message = f"Your GDP Ranking based on global scale: {percentile}\n\nTop 15 countries by GDP in 2024:\n\n"
+
+            countries_gdp = {
+                "United States": 25.43,
+                "China": 14.72,
+                "Japan": 4.25,
+                "Germany": 3.85,
+                "India": 3.41,
+                "United Kingdom": 2.67,
+                "France": 2.63,
+                "Russia": 2.24,
+                "Canada": 2.16,
+                "Italy": 2.04,
+                "Brazil": 1.92,
+                "Australia": 1.69,
+                "South Korea": 1.67,
+                "Mexico": 1.46,
+                "Spain": 1.41,
+            }
 
             for country, gdp in countries_gdp.items():
                 ranking_message += f"{country}: ${gdp:.2f} Trillion\n"
@@ -216,7 +225,6 @@ class GDPApp:
 
         except ValueError:
             messagebox.showerror("Input Error", "Please calculate GDP first.")
-
 
 # Main program
 if __name__ == "__main__":
