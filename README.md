@@ -134,7 +134,7 @@ deficiencies that remain in your code. Bugs found that aren't acknowledged in th
     The bugs has been tracked and listed on the queue.  
 ```
 
-### ❗Reflection
+### Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
 - Why did you select the project that you did?
 - How closely did your final project reflect your initial design?
@@ -168,7 +168,7 @@ In three to four well-written paragraphs, address the following (at a minimum):
     
     Next time, I would approach the project with a better strategy. I would break everything into smaller, more manageable 
     tasks instead of trying to tackle big chunks at once. This way, I could focus on completing one part at a time and avoid 
-    feeling overwhelmed. I would also start earlier on features like data visualization and real-world data integration, as 
+    feeling overwhelmed. I would also start earlier on features like data visualization and data integration, as 
     those are more time-consuming than I initially thought. Overall, this project taught me a lot, and I am excited to 
     improve it in the future.
     

@@ -5,7 +5,8 @@
 #Purpose: This program calculates the GDP using user-provided inputs for its components.
 
 ########################################################################################################################
-#Acknowledgment: resources and mentors for guidance on GDP and GUI programming.
+#Acknowledgment: The GDP data has been taken form the World Bank website, and we used GUI programming which all the resources
+# references has been provided in the reference section of the README.md.
 
 ########################################################################################################################
 

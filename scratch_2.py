@@ -8,3 +8,5 @@ for item in data:
     gdp_value = [1]
 
     print(f"Country: {country_name}, GDP: {gdp_value}")
+
+
