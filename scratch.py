@@ -208,6 +208,10 @@ class GDPApp:
         except ValueError:
             messagebox.showerror("Input Error", "Please calculate GDP first.")
 
+f = open("Data/datagdp_data_2.xlsx.csv", "r")
+for line in f.readlines():
+    data = line.split(",")
+    print(data)
 
 # Main program
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 
 ## Milestone 1: Setup, Planning, Design
 
-**Title**: `Macro-Economics Tracker`
+**Title**: `GDP Calculator`
 
 **Purpose**: `One of the most important concepts in Macro-economics is GDP (Gross Domestic Products). This project is
  intented to calculate GDP and its components (Consumption, Investment, Government Spending, and Net Exports) 
@@ -45,6 +45,7 @@ Chapter 10: Lists (to store and manipulate data)
 Chapter 12: Dictionaries (to store GDP components and their values)
 Chapter 15: GUI and Event Driven Programming (for the interactive user interface)
 Chapter 17-19: Classes and Objects, Inheritance (to structure the GDP calculator and components as objects)
+Chapter 11: Files
 
 (We may need to add more chapters as we move forward.)
 
