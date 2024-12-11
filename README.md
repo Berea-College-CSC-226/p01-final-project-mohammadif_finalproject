@@ -172,6 +172,36 @@ In three to four well-written paragraphs, address the following (at a minimum):
     those are more time-consuming than I initially thought. Overall, this project taught me a lot, and I am excited to 
     improve it in the future.
     
-    (Sonam.......)
+    
+    
+    
+    
+    I decided to partner up with Feda and work on this project becuase we share similar majors and visions on future
+     careers also good friendship, I was pleased by his origianl idea of this GDP-calclator and we agreed to work 
+     together on this project.I also believe this project is a hybrid of Coding and ecnomics knowledge, plus 
+     team work and communication, which will be beneficial for both of us in many way. 
+     
+    I think our final product is pretty much what we had in our vision from the initail discussion,we tried to set a
+    realistic goal with excutable plans and there might be one or two features that we didnt' figure out but according 
+    to our intial plan, I would call this final product a completion. 
+    
+    I learned that with a proper goal and plan, building a product will be much easier and stress-free. Also
+    put what you have learned from class into actions, especially when working with someone could be very different 
+    than taking tests. There will be a lot of unexpected factors and nuances during the process, the importance of 
+    communication is also amplified during such experience. 
+    
+    For me the hardest part of this project is actually how to effectively co-operate with someone, when you have to
+    consider factors like time-management, conflicts, disagreement and many more. These are usually more nuances than
+    pure technical issues, and could be overlooked or ignored. but in order to make 1+1 greater or at least not smaller 
+    than 2 is a very interesting yet challenging thing that made me ponder about. 
+    
+    By knowing what I learned from this experience, I would say systematic consistency is a good practice, also the role
+     of effecitve communication can often get overlooked but it could be the inhabitor or the catalyst, so definitely 
+     it is very important. 
+     
+    Overal, I worked well with my partner Feda, especially the part that we scheduled meeting outside of the class
+    to discuss about the project and progress, also we updated each other about our own progress  when we can't meet out
+    side of the class. The challenging part is that since we adopted the spliting the task stradegy, it's a bit challenging 
+    to fully understand eachother's work. Espeicially when we have different views. 
 
 ```
