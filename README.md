@@ -5,7 +5,7 @@
 ❗️Exclamation Marks ❗️indicate action items; you should remove these emoji as you complete/update the items which 
   they accompany. (This means that your final README should have no ❗️in it!)
 
-**Author(s)**: Feda Mohammadi ,  Sonam Tsering 
+**Author(s)**: Feda Mohammadi , Sonam Tsering 
 
 
 **Google Doc Lin[README.md](README.md)k**: https://docs.google.com/document/d/1IqUFa12ckRFlhGmxh_lFLJQb1BVDFZ_NzAk2kyYhfJA/edit?usp=sharing
@@ -17,11 +17,21 @@ Throughout this project, you have likely used outside resources. Reference all i
 and describe how you integrated the ideas or code into your program. This includes online sources, people who have 
 helped you, AI tools you've used, and any other resources that are not solely your own contribution. Update as you go.
 
+`
+#1. Classes and Objects in Python: https://www.w3schools.com/python/python_classes.asp 
+#3. Why the Reset and Calculate buttons are not working on this code? It gives me this error!!.... 
+#4. ChatGPT prompt: What are some ways to pull real-world GDP data from the World Bank website and implement it in this code?
+#5. ChatGPT prompt: What is wbgapi and how can I use it to solve this problem?
+#6. WBGAPI https://pypi.org/project/wbgapi/
+#7. How to import data into Python? https://365datascience.com/tutorials/python-tutorials/import-data-python/
+#8. 
+`
+
 ---
 
 ## Milestone 1: Setup, Planning, Design
 
-**Title**: `Macro-Economics Tracker`
+**Title**: `GDP Calculator`
 
 **Purpose**: `One of the most important concepts in Macro-economics is GDP (Gross Domestic Products). This project is
  intented to calculate GDP and its components (Consumption, Investment, Government Spending, and Net Exports) 
@@ -34,6 +44,7 @@ Chapter 10: Lists (to store and manipulate data)
 Chapter 12: Dictionaries (to store GDP components and their values)
 Chapter 15: GUI and Event Driven Programming (for the interactive user interface)
 Chapter 17-19: Classes and Objects, Inheritance (to structure the GDP calculator and components as objects)
+Chapter 11: Files
 
 (We may need to add more chapters as we move forward.)
 
@@ -82,30 +93,48 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
+**Completion Percentage**: `86% - 100%`
 
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+    I personally feel very confident in compeleting this project on time because, over the past few weeks, we
+    have completed the biggest chunk of code that was the main chalenge to us. I made some changes and added more
+    features to it today and I believe that it will turn out well. There will be a few more changes including the 
+    testing portion in the next few days. After that, we will almost be 100% done. 
+    However, in any unforeseen cirsumstance, if we won't be able to complete this project online, the best strategy
+    in my opinion would be to get the most of done as soon as possible, right away. In that case, we won't worry about
+    the some of the biggest components that we would need to have on the application. But so far, I am confident that
+    it will be completed on time. 
 ```
-
----
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
+```
+    When you run the program, a window will appear with the title "GDP Calculator." Start by reading the welcome 
+    message, which explains what GDP is and its components. Below the message, you’ll see four fields where you can enter 
+    the values for GDP components: "Consumption," "Investment," "Government Spending," and "Net Exports." Fill in these 
+    fields with numbers (e.g., 1000, 2000). Once you have entered all the values, click the "Calculate GDP" button to see 
+    the total GDP displayed just below the buttons. If you want to reset all fields and start over, click the "Reset" button. 
+    After calculating the GDP, click the "See the Ranking" button to view how your GDP compares to other countries. 
+    Follow these steps to calculate and rank GDP as many times as you would like.
 
-### ❗Errors and Constraints
+```
+
+### Errors and Constraints
 Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
 deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
+```
+    The bugs has been tracked and listed on the queue.  
+```
 
-### ❗Reflection
+### Reflection
 In three to four well-written paragraphs, address the following (at a minimum):
 - Why did you select the project that you did?
 - How closely did your final project reflect your initial design?
@@ -113,3 +142,36 @@ In three to four well-written paragraphs, address the following (at a minimum):
 - What was the hardest part of the final project?
 - What would you do differently next time, knowing what you know now?
 - (For partners) How well did you work with your partner? What made it go well? What made it challenging?
+
+```
+    I selected this project because I enjoy economics and economic data analysis, which is also my major. I have always 
+    been interested in understanding how different economic components, like consumption and investment, work together 
+    to calculate GDP. This project allowed me to combine my interest in economics with programming, which made it exciting 
+    and meaningful. I wanted to create something practical that could help people learn more about GDP and see how their
+    economic data fits into a global context.
+     
+    The final project is very close to what I had in mind when I first started. This program calculates GDP and ranks it
+    compared to other countries, just as I planned. However, one feature I wanted but couldn’t finish is data visualization. 
+    My goal was to let users see their GDP compared visually with global data, but we didn’t get to that part yet. 
+    Although it’s not complete, we plan to add the visualization feature after this semester to make the project even more 
+    useful and engaging. 
+    
+    I learned many things while working on this project. One of the biggest lessons was that it was much harder than I 
+    thought it would be when I started. The coding part was challenging, especially working with classes and objects. 
+    However, this also became a great learning experience as I now better understand how to use classes in a real program. 
+    The process taught me to manage my expectations and appreciate how much effort goes into building even a simple application.
+    
+    The hardest part of this project was connecting real-world data from other sources and visualizing it. We tried to 
+    fetch GDP data from external sources and clean it to use in the program, but it turned out to be very complex. 
+    While we made some progress, we couldn’t fully accomplish what we wanted in this area. Data cleaning and visualization 
+    require more time and effort, so we plan to continue working on this in the future.
+    
+    Next time, I would approach the project with a better strategy. I would break everything into smaller, more manageable 
+    tasks instead of trying to tackle big chunks at once. This way, I could focus on completing one part at a time and avoid 
+    feeling overwhelmed. I would also start earlier on features like data visualization and data integration, as 
+    those are more time-consuming than I initially thought. Overall, this project taught me a lot, and I am excited to 
+    improve it in the future.
+    
+    (Sonam.......)
+
+```

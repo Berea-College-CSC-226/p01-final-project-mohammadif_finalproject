@@ -1,15 +1,3 @@
-
-#Name: Feda Mohammadi
-#Username: mohammadif
-########################################################################################################################
-#Purpose: This program calculates the GDP using user-provided inputs for its components.
-
-########################################################################################################################
-#Acknowledgment: The GDP data has been taken form the World Bank website, and we used GUI programming which all the resources
-# references has been provided in the reference section of the README.md.
-
-########################################################################################################################
-
 import tkinter as tk
 from tkinter import messagebox
 
@@ -25,7 +13,7 @@ class GDPComponent:
     def get_value(self):
         return self.value
 
-# Class for calculating the total GDP
+# Class for calculating total GDP
 class GDPCalculator:
     def __init__(self):
         self.components = []
