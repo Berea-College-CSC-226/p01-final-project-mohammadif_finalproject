@@ -2,7 +2,7 @@
 #Name: Feda Mohammadi
 #Username: mohammadif
 ########################################################################################################################
-#Purpose: This program calculates the GDP using user-provided inputs for its components.
+#Purpose: This program calculates the GDP (Gross Domestic Product) using user-provided inputs for its components.
 
 ########################################################################################################################
 #Acknowledgment: The GDP data has been taken form the World Bank website, and we used GUI programming which all the resources

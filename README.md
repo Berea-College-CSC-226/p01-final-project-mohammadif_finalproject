@@ -23,8 +23,7 @@ helped you, AI tools you've used, and any other resources that are not solely yo
 #4. ChatGPT prompt: What are some ways to pull real-world GDP data from the World Bank website and implement it in this code?
 #5. ChatGPT prompt: What is wbgapi and how can I use it to solve this problem?
 #6. WBGAPI https://pypi.org/project/wbgapi/
-#7. How to import data into Python? https://365datascience.com/tutorials/python-tutorials/import-data-python/
-#8. 
+#7. How to import data into Python? https://365datascience.com/tutorials/python-tutorials/import-data-python/\
 `
 
 ---
@@ -39,14 +38,14 @@ helped you, AI tools you've used, and any other resources that are not solely yo
  rank the GDP and show the historical data on GDP of that specific country.`
 
 **Source Assignment(s)**:
+`
 Chapter 6: Functions (to structure the program into reusable functions)
 Chapter 10: Lists (to store and manipulate data)
 Chapter 12: Dictionaries (to store GDP components and their values)
 Chapter 15: GUI and Event Driven Programming (for the interactive user interface)
 Chapter 17-19: Classes and Objects, Inheritance (to structure the GDP calculator and components as objects)
 Chapter 11: Files
-
-(We may need to add more chapters as we move forward.)
+`
 
 
 **CRC Card(s)**:
@@ -57,7 +56,7 @@ Chapter 11: Files
     README. You can do this by saving an image in the repository and linking to it. See the sample CRC card below - 
     and REPLACE it with your own:
   
-![Don't leave me in your README!](image/my_crc.png)   (This crc may change as we move forward!)
+![Don't leave me in your README!](image/my_crc.png)  
 
 **Branches**: This project will **require** effective use of git. 
 
@@ -93,7 +92,7 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-**Completion Percentage**: `86% - 100%`
+**Completion Percentage**: `88% - 100%`
 
 **Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
@@ -196,8 +195,8 @@ In three to four well-written paragraphs, address the following (at a minimum):
     than 2 is a very interesting yet challenging thing that made me ponder about. 
     
     By knowing what I learned from this experience, I would say systematic consistency is a good practice, also the role
-     of effecitve communication can often get overlooked but it could be the inhabitor or the catalyst, so definitely 
-     it is very important. 
+    of effecitve communication can often get overlooked but it could be the inhabitor or the catalyst, so definitely 
+    it is very important. 
      
     Overal, I worked well with my partner Feda, especially the part that we scheduled meeting outside of the class
     to discuss about the project and progress, also we updated each other about our own progress  when we can't meet out
